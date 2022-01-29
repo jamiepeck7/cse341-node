@@ -1,5 +1,5 @@
 const path = require('path');
-//const path = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -48,7 +48,7 @@ mongoose.connect('mongodb+srv://jamiepeck:43v3rF%40mily@cluster0.vp6wz.mongodb.n
       user.save();
     }
   });
-  app.listen(3000);
+  app.listen(PORT);
 })
 .catch(err => {
   console.log(err);
