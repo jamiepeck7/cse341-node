@@ -46,35 +46,46 @@ const options = {
   family: 4
 };
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://jamiepeck:43v3rF%40mily@cse341cluster-3dwlw.mongodb.net/test?retryWrites=true&w=majority";
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb+srv://jamiepeck:43v3rF%40mily@cluster0.vp6wz.mongodb.net/shop';
                       
 
-mongoose.connect('mongodb+srv://jamiepeck:43v3rF%40mily@cluster0.vp6wz.mongodb.net/shop')
-.then(result => {
-  User.findOne().then(user => {
-    if (!user) {
-      const user = new User({
-        name: 'Jay',
-        email: 'test@test.com',
-        cart: {
-          items: []
-        }
-      });
-      user.save();
-    }
-  });
-  app.listen(PORT);
-})
-.catch(err => {
-  console.log(err);
-});
+// mongoose.connect('mongodb+srv://jamiepeck:43v3rF%40mily@cluster0.vp6wz.mongodb.net/shop')
+// .then(result => {
+  // User.findOne().then(user => {
+    // if (!user) {
+      // const user = new User({
+        // name: 'Jay',
+        // email: 'test@test.com',
+        // cart: {
+          // items: []
+        // }
+      // });
+      // user.save();
+    // }
+  // });
+  // app.listen(PORT);
+// })
+// .catch(err => {
+  // console.log(err);
+// });
 
 mongoose
   .connect(
     MONGODB_URL, options
   )
   .then(result => {
-     // This should be your user handling code implement following the course videos
+    User.findOne().then(user => {
+      if (!user) {
+        const user = new User({
+          name: 'Jay',
+          email: 'test@test.com',
+          cart: {
+            items: []
+          }
+        });
+        user.save();
+      }
+    });
     app.listen(PORT);
   })
   .catch(err => {
