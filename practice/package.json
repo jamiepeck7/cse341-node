@@ -13,16 +13,27 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.1",
     "compass": "^0.1.1",
+    "connect": "^3.7.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
     "cors": "^2.8.5",
+    "csurf": "^1.11.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "express-handlebars": "^3.0.2",
+    "express-session": "^1.17.2",
+    "flash": "^1.1.0",
+    "module": "^1.2.5",
     "mongodb": "^4.3.1",
     "mongoose": "^6.1.8",
+    "nodemailer": "^6.7.2",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "pug": "^3.0.2",
     "sequelize": "^6.14.1",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "session": "^0.1.0"
   }
 }
